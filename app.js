@@ -4,10 +4,10 @@
 
   let numCartItems = document.getElementsByClassName("minicart-quantity")[0].innerHTML;
   let cartTotal = document.getElementsByClassName("order-value")[0].innerHTML;
-  let imageHTMLCollection = document.getElementsByClassName("mini-cart-image")
-  let imageArray = Array.from(imageHTMLCollection).map(image => image.children[0].innerHTML)
+  let imageHTMLCollection = document.getElementsByClassName("mini-cart-image");
+  let imageArray = Array.from(imageHTMLCollection).map(image => image.children[0].innerHTML);
 
-  // HTML and inline CSS to display overlay if user scrolls to bottom 10% of page. Uses existing CSS classes from Marmot where appropriate.
+  // HTML with inline CSS to display overlay if user scrolls to bottom 10% of page. Uses existing CSS classes from Marmot where appropriate.
   let overlayHTML = `<div id="overlay-wrapper">
       <div id="overlay" class="ui-widget-overlay ui-front" style="z-index:100;"></div>
 
@@ -27,11 +27,11 @@
 
   // Inserts overlayHTML into DOM
   let displayOverlay = () => {
-    var contentWrapper = document.getElementById("wrapper")
+    var contentWrapper = document.getElementById("wrapper");
     contentWrapper.insertAdjacentHTML('beforebegin', overlayHTML);
     // Removes overlayHTML if closeOverlayButton is clicked
-    let closeOverlayButton = document.getElementById("close-overlay-button")
-    let overlay = document.getElementById("overlay-wrapper")
+    let closeOverlayButton = document.getElementById("close-overlay-button");
+    let overlay = document.getElementById("overlay-wrapper");
     closeOverlayButton.addEventListener("click", (event) => {
       event.preventDefault();
       overlay.remove();
